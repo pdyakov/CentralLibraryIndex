@@ -1,5 +1,6 @@
 package centrallibrary.logic;
-
+import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -10,16 +11,28 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class Book {
+    private Integer index;
+    private String library;
     private String author;
     private String name;
-    private Date issued;
+    private String issued;
     private String issuedTo;
 
-    public Book(String author, String name, Date issued, String issuedTo) {
+    public Book(Integer index, String library, String author, String name, String issued, String issuedTo) {
+        this.index = index;
+        this.library = library;
         this.author = author;
         this.name = name;
         this.issued = issued;
         this.issuedTo = issuedTo;
+    }
+
+    public Integer getIndex() {
+        return index;
+    }
+
+    public String getLibrary() {
+        return library;
     }
 
     public String getAuthor() {
@@ -30,7 +43,7 @@ public class Book {
         return name;
     }
 
-    public Date getIssued() {
+    public String getIssued() {
         return issued;
     }
 
@@ -40,8 +53,8 @@ public class Book {
 
     public Boolean makeOrder(String issuedTo) {
         Boolean result = false;
-        if ((this.issued == null) && (this.issuedTo == null)) {
-            this.issued = new Date();
+        if ((issued == null) && (this.issuedTo == null)) {
+            issued = new SimpleDateFormat("yyyy.M.d").format(new Date());
             this.issuedTo = issuedTo;
             result = true;
         }
@@ -50,10 +63,10 @@ public class Book {
 
     public String returnBook() {
         String result = null;
-        if ((this.issued != null) && (this.issuedTo != null)) {
-            result = this.issuedTo;
-            this.issued = null;
-            this.issuedTo = null;
+        if ((issued != null) && (issuedTo != null)) {
+            result = issuedTo;
+            issued = null;
+            issuedTo = null;
         }
         return result;
     }
