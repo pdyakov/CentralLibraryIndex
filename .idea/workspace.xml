@@ -4,7 +4,7 @@
     <list default="true" id="cf030902-8fca-42f8-8f09-daede7fde5b1" name="Default" comment="" />
     <ignored path="CentralLibraryIndex.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Main.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374585590878" ignored="false" />
+    <file path="/Main.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374594069151" ignored="false" />
     <file path="/Book.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374520694891" ignored="false" />
     <file path="/fragment.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374578403109" ignored="false" />
     <file path="/BookDAO.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374582604687" ignored="false" />
@@ -12,6 +12,7 @@
     <file path="/CSVBookDAOImpl.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374585282974" ignored="false" />
     <file path="/TextBookDAOImpl.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374583647121" ignored="false" />
     <file path="/CentralLibrary.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374581210602" ignored="false" />
+    <file path="/CommonBookDAOImpl.java" changelist="cf030902-8fca-42f8-8f09-daede7fde5b1" time="1374593912811" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +62,22 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/centrallibrary/dao/CommonBookDAOImpl.java" line="32" class="centrallibrary.dao.CommonBookDAOImpl" package="centrallibrary.dao">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -70,13 +87,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/centrallibrary/ui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="43" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0">
+            <state line="21" column="48" selection-start="734" selection-end="734" vertical-scroll-proportion="0.9614325">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#Main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -100,17 +116,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CentralLibrary.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/centrallibrary/logic/CentralLibrary.java">
+      <file leaf-file-name="CommonBookDAOImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/centrallibrary/dao/CommonBookDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="9" selection-start="238" selection-end="238" vertical-scroll-proportion="0.24242425">
+            <state line="32" column="0" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#CentralLibrary#0" expanded="false" />
-                <element signature="e#279#288#0" expanded="true" />
-                <element signature="method#CentralLibrary#0;class#CentralLibrary#0" expanded="false" />
-                <element signature="method#findBooks#0;class#CentralLibrary#0" expanded="false" />
-                <element signature="e#521#527#0" expanded="true" />
+                <element signature="e#305#314#0" expanded="true" />
+                <element signature="method#CommonBookDAOImpl#0;class#CommonBookDAOImpl#0" expanded="false" />
+                <element signature="e#550#556#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,6 +179,7 @@
         <option value="$PROJECT_DIR$/src/centrallibrary/dao/BookDAO.java" />
         <option value="$PROJECT_DIR$/src/centrallibrary/dao/TextBookDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/centrallibrary/dao/CSVBookDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/centrallibrary/dao/CommonBookDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/centrallibrary/ui/Main.java" />
       </list>
     </option>
@@ -234,6 +249,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="centrallibrary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CentralLibraryIndex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CentralLibraryIndex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="centrallibrary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CentralLibraryIndex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CentralLibraryIndex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="centrallibrary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,6 +419,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960254" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42539683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -370,11 +430,10 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960254" sideWeight="0.33333334" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960254" sideWeight="0.931746" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.06825397" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960254" sideWeight="0.6174603" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3825397" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -444,7 +503,6 @@
         <state line="10" column="41" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -494,7 +552,6 @@
         <state line="6" column="31" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -515,22 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="107" column="19" selection-start="3638" selection-end="3638" vertical-scroll-proportion="0.33333334">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/centrallibrary/logic/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="31" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getLibrary#0;class#Book#0" expanded="false" />
-            <element signature="method#getAuthor#0;class#Book#0" expanded="false" />
-            <element signature="method#getName#0;class#Book#0" expanded="false" />
-            <element signature="method#getIssued#0;class#Book#0" expanded="false" />
-            <element signature="method#getIssuedTo#0;class#Book#0" expanded="false" />
-            <element signature="method#makeOrder#0;class#Book#0" expanded="false" />
-            <element signature="method#returnBook#0;class#Book#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -572,26 +613,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/centrallibrary/ui/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/centrallibrary/logic/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="43" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0">
+        <state line="31" column="31" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#getLibrary#0;class#Book#0" expanded="false" />
+            <element signature="method#getAuthor#0;class#Book#0" expanded="false" />
+            <element signature="method#getName#0;class#Book#0" expanded="false" />
+            <element signature="method#getIssued#0;class#Book#0" expanded="false" />
+            <element signature="method#getIssuedTo#0;class#Book#0" expanded="false" />
+            <element signature="method#makeOrder#0;class#Book#0" expanded="false" />
+            <element signature="method#returnBook#0;class#Book#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/centrallibrary/logic/CentralLibrary.java">
+    <entry file="file://$PROJECT_DIR$/src/centrallibrary/dao/CommonBookDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="9" selection-start="238" selection-end="238" vertical-scroll-proportion="0.24242425">
+        <state line="32" column="0" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CentralLibrary#0" expanded="false" />
-            <element signature="e#279#288#0" expanded="true" />
-            <element signature="method#CentralLibrary#0;class#CentralLibrary#0" expanded="false" />
-            <element signature="method#findBooks#0;class#CentralLibrary#0" expanded="false" />
-            <element signature="e#521#527#0" expanded="true" />
+            <element signature="e#305#314#0" expanded="true" />
+            <element signature="method#CommonBookDAOImpl#0;class#CommonBookDAOImpl#0" expanded="false" />
+            <element signature="e#550#556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/centrallibrary/ui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="48" selection-start="734" selection-end="734" vertical-scroll-proportion="0.9614325">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

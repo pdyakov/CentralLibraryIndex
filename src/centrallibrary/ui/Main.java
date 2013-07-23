@@ -1,13 +1,12 @@
 package centrallibrary.ui;
 
 import centrallibrary.logic.Book;
-import centrallibrary.logic.CentralLibrary;
-import centrallibrary.dao.CSVBookDAOImpl;
+import centrallibrary.dao.*;
 
 import java.util.List;
 
 public class Main {
-    private static CentralLibrary library = new CentralLibrary();
+    private static BookDAO library = new CommonBookDAOImpl();
 
     public static void main(String[] args) {
         List<Book> books = library.findBooks("", "");
@@ -20,7 +19,7 @@ public class Main {
             System.out.println(book.getIssuedTo());
             System.out.println("----------");
         }
-        Book book = new CSVBookDAOImpl().findBookByIndex(1003);
+        Book book = library.findBookByIndex(1006);
         if (book != null) {
             System.out.println(book.getIndex());
             System.out.println(book.getLibrary());

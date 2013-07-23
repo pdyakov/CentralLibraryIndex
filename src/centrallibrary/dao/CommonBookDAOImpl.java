@@ -1,19 +1,20 @@
-package centrallibrary.logic;
+package centrallibrary.dao;
+
+import centrallibrary.logic.Book;
 
 import java.util.ArrayList;
 import java.util.List;
-import centrallibrary.dao.*;
 
 /**
  * Created with IntelliJ IDEA.
  * User: Павел
  * Date: 23.07.13
- * Time: 14:59
+ * Time: 18:33
  */
-public class CentralLibrary {
+public class CommonBookDAOImpl implements BookDAO {
     private List<BookDAO> contexts = new ArrayList<BookDAO>();
 
-    public CentralLibrary() {
+    public CommonBookDAOImpl() {
         contexts.add(new CSVBookDAOImpl());
         contexts.add(new TextBookDAOImpl());
     }
@@ -24,5 +25,14 @@ public class CentralLibrary {
             books.addAll(context.findBooks(author, name));
         }
         return books;
+    }
+
+    public Book findBookByIndex(int index) {
+        Book book = null;
+        for (BookDAO context:contexts) {
+            book = context.findBookByIndex(index);
+            if (book != null) return book;
+        }
+        return book;
     }
 }
