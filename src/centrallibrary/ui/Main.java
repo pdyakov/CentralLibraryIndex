@@ -5,7 +5,7 @@ import centrallibrary.dao.*;
 import java.util.List;
 
 public class Main {
-    private static BookDAO bookDAO = new CSVBookDAOImpl();
+    private static BookDAO bookDAO = new TextBookDAOImpl();
 
     public static void main(String[] args) {
         List<Book> books = bookDAO.Find("", "");

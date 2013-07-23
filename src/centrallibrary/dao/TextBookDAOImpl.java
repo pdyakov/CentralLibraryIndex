@@ -1,20 +1,20 @@
 package centrallibrary.dao;
 
+import centrallibrary.logic.Book;
+
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
 
-import centrallibrary.logic.Book;
-
 /**
  * Created with IntelliJ IDEA.
  * User: Павел
- * Date: 22.07.13
- * Time: 16:36
+ * Date: 23.07.13
+ * Time: 13:30
  */
-public class CSVBookDAOImpl implements BookDAO {
+public class TextBookDAOImpl implements BookDAO {
     private static final String LIBRARY_DIRECTORY_PATH = "C:/Libraries";
-    private static final String LIBRARY_TYPE_NAME = "CSV";
+    private static final String LIBRARY_TYPE_NAME = "Text";
 
     public List<Book> Find(String author, String name) {
         List<Book> books = new ArrayList<Book>();
@@ -51,28 +51,14 @@ public class CSVBookDAOImpl implements BookDAO {
 
         for (File file : files) {
             if (file.isFile() && file.canRead()) {
+                bookIssued = "";
+                bookIssuedTo = "";
                 BufferedReader br = null;
+                String[] lines = new String[5];
                 try {
                     br = new BufferedReader(new FileReader(file));
-                    String line = br.readLine();
-                    while (line != null) {
-                        bookIssued = "";
-                        bookIssuedTo = "";
-                        String[] params = line.split(",");
-                        if (params[1].toLowerCase().contains(author.toLowerCase()) &&
-                                params[2].toLowerCase().contains(name.toLowerCase())) {
-                            bookIndex = Integer.parseInt(params[0]);
-                            bookAuthor = params[1];
-                            bookName = params[2];
-                            if (params.length > 3) {
-                                bookIssued = params[3];
-                                bookIssuedTo = params[4];
-                            }
-                            books.add(
-                                    new Book(bookIndex, libraryName, bookAuthor, bookName, bookIssued, bookIssuedTo)
-                            );
-                        }
-                        line = br.readLine();
+                    for (int i = 0; i < 5; i++) {
+                        lines[i] = br.readLine();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -82,6 +68,17 @@ public class CSVBookDAOImpl implements BookDAO {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                }
+                if (lines[1].split("=")[1].toLowerCase().contains(author.toLowerCase()) &&
+                        lines[2].split("=")[1].toLowerCase().contains(name.toLowerCase())) {
+                    bookIndex = Integer.parseInt(lines[0].split("=")[1]);
+                    bookAuthor = lines[1].split("=")[1];
+                    bookName = lines[2].split("=")[1];
+                    String[] temp = lines[3].split("=");
+                    if (temp.length == 2) bookIssued = temp[1];
+                    temp = lines[4].split("=");
+                    if (temp.length == 2) bookIssuedTo = temp[1];
+                    books.add(new Book(bookIndex, libraryName, bookAuthor, bookName, bookIssued, bookIssuedTo));
                 }
             }
         }
