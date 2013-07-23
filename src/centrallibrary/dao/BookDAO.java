@@ -11,4 +11,5 @@ import centrallibrary.logic.Book;
  */
 public interface BookDAO {
     List<Book> findBooks(String author, String name);
+    Book findBookByIndex(int index);
 }

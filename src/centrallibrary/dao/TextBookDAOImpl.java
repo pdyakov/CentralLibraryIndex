@@ -37,6 +37,28 @@ public class TextBookDAOImpl implements BookDAO {
         return books;
     }
 
+    public Book findBookByIndex(int index) {
+        Book book = null;
+
+        File[] libraries;
+        File directory = new File(LIBRARY_DIRECTORY_PATH);
+
+        if (directory.isDirectory()) {
+            libraries = directory.listFiles();
+
+            if (libraries != null) {
+                for (File library : libraries) {
+                    if (library.getName().split("_")[0].equals(LIBRARY_TYPE_NAME)) {
+                        book = findBookInLibrary(library, index);
+                        if (book != null) return book;
+                    }
+                }
+            }
+        }
+
+        return book;
+    }
+
     private List<Book> findBooksInLibrary(File library, String author, String name) {
         List<Book> books = new ArrayList<Book>();
 
@@ -69,11 +91,11 @@ public class TextBookDAOImpl implements BookDAO {
                         e.printStackTrace();
                     }
                 }
-                if (lines[1].split("=")[1].toLowerCase().contains(author.toLowerCase()) &&
-                        lines[2].split("=")[1].toLowerCase().contains(name.toLowerCase())) {
+                bookAuthor = lines[1].split("=")[1];
+                bookName = lines[2].split("=")[1];
+                if (bookAuthor.toLowerCase().contains(author.toLowerCase()) &&
+                        bookName.toLowerCase().contains(name.toLowerCase())) {
                     bookIndex = Integer.parseInt(lines[0].split("=")[1]);
-                    bookAuthor = lines[1].split("=")[1];
-                    bookName = lines[2].split("=")[1];
                     String[] temp = lines[3].split("=");
                     if (temp.length == 2) bookIssued = temp[1];
                     temp = lines[4].split("=");
@@ -83,5 +105,47 @@ public class TextBookDAOImpl implements BookDAO {
             }
         }
         return books;
+    }
+
+    private Book findBookInLibrary(File library, int index) {
+        File[] files = library.listFiles();
+        Integer bookIndex;
+        String libraryName = library.getName().split("_")[1];
+        String bookIssued = "";
+        String bookIssuedTo = "";
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile() && file.canRead()) {
+                    BufferedReader br = null;
+                    String[] lines = new String[5];
+                    try {
+                        br = new BufferedReader(new FileReader(file));
+                        for (int i = 0; i < 5; i++) {
+                            lines[i] = br.readLine();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            if (br != null) br.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    bookIndex = Integer.parseInt(lines[0].split("=")[1]);
+                    if (bookIndex.equals(index)) {
+                        String bookAuthor = lines[1].split("=")[1];
+                        String bookName = lines[2].split("=")[1];
+                        String[] temp = lines[3].split("=");
+                        if (temp.length == 2) bookIssued = temp[1];
+                        temp = lines[4].split("=");
+                        if (temp.length == 2) bookIssuedTo = temp[1];
+                        return new Book(bookIndex, libraryName, bookAuthor, bookName, bookIssued, bookIssuedTo);
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 }
