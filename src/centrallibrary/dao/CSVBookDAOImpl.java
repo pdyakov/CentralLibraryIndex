@@ -16,7 +16,7 @@ public class CSVBookDAOImpl implements BookDAO {
     private static final String LIBRARY_DIRECTORY_PATH = "C:/Libraries";
     private static final String LIBRARY_TYPE_NAME = "CSV";
 
-    public List<Book> Find(String author, String name) {
+    public List<Book> findBooks(String author, String name) {
         List<Book> books = new ArrayList<Book>();
 
         File[] libraries;

@@ -8,8 +8,7 @@ import centrallibrary.logic.Book;
  * User: Павел
  * Date: 22.07.13
  * Time: 15:54
- * To change this template use File | Settings | File Templates.
  */
 public interface BookDAO {
-    List<Book> Find(String author, String name);
+    List<Book> findBooks(String author, String name);
 }

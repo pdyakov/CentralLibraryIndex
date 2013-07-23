@@ -1,14 +1,15 @@
 package centrallibrary.ui;
 
 import centrallibrary.logic.Book;
-import centrallibrary.dao.*;
+import centrallibrary.logic.CentralLibrary;
+
 import java.util.List;
 
 public class Main {
-    private static BookDAO bookDAO = new TextBookDAOImpl();
+    private static CentralLibrary library = new CentralLibrary();
 
     public static void main(String[] args) {
-        List<Book> books = bookDAO.Find("", "");
+        List<Book> books = library.findBooks("", "");
         for (Book book:books) {
             System.out.println(book.getIndex());
             System.out.println(book.getLibrary());

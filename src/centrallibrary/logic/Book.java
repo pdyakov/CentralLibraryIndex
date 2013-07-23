@@ -1,6 +1,5 @@
 package centrallibrary.logic;
 import java.text.SimpleDateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -8,7 +7,6 @@ import java.util.Date;
  * User: Павел
  * Date: 22.07.13
  * Time: 14:12
- * To change this template use File | Settings | File Templates.
  */
 public class Book {
     private Integer index;
