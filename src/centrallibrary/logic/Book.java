@@ -51,7 +51,7 @@ public class Book {
 
     public Boolean makeOrder(String issuedTo) {
         Boolean result = false;
-        if ((issued == null) && (this.issuedTo == null)) {
+        if ((issued == "") && (this.issuedTo == "")) {
             issued = new SimpleDateFormat("yyyy.M.d").format(new Date());
             this.issuedTo = issuedTo;
             result = true;
@@ -61,10 +61,10 @@ public class Book {
 
     public String returnBook() {
         String result = null;
-        if ((issued != null) && (issuedTo != null)) {
+        if ((issued != "") && (issuedTo != "")) {
             result = issuedTo;
-            issued = null;
-            issuedTo = null;
+            issued = "";
+            issuedTo = "";
         }
         return result;
     }
