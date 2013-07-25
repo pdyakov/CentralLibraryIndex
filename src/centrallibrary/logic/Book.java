@@ -49,23 +49,38 @@ public class Book {
         return issuedTo;
     }
 
+    /**
+     * Update book information about order
+     * @param issuedTo abonent name
+     * @return true if success, otherwise false
+     */
     public Boolean makeOrder(String issuedTo) {
-        Boolean result = false;
-        if ((issued == "") && (this.issuedTo == "")) {
+        if ((issued.equals("")) && (this.issuedTo.equals(""))) {
             issued = new SimpleDateFormat("yyyy.M.d").format(new Date());
             this.issuedTo = issuedTo;
-            result = true;
+            return true;
         }
-        return result;
+        return false;
     }
 
-    public String returnBook() {
-        String result = null;
-        if ((issued != "") && (issuedTo != "")) {
-            result = issuedTo;
+    /**
+     * Update book information about order
+     * @return true if success, otherwise false
+     */
+    public boolean returnBook() {
+        if ((!issued.equals("")) && (!issuedTo.equals(""))) {
             issued = "";
             issuedTo = "";
+            return true;
         }
-        return result;
+        return false;
+    }
+
+    /**
+     * Return if book can be ordered
+     * @return true if success, otherwise false
+     */
+    public boolean canOrder() {
+        return (issued.equals(""));
     }
 }
